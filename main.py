@@ -6,9 +6,7 @@ from selenium.webdriver.common.by import By
 import time
 import string
 import random
- 
-# Replace below path with the absolute path
-# to chromedriver in your computer
+
 driver = webdriver.Chrome('./chromedriverLinux')
  
 driver.get("https://web.whatsapp.com/")
@@ -28,11 +26,11 @@ input_box = wait.until(EC.presence_of_element_located((
     By.XPATH, inp_xpath)))
 print("InputBox Found")
 for i in range(100):
-    #Generate Random String
-    N = 11
-    message = str("Message ") + str(i) + str(": I wrote code for spamming Whatsapp. Gudiya Challenged me. Suffer my Wrath now :D")
     # Replace the below string with your own message
-    #message = str(''.join(random.choices(string.ascii_uppercase + string.digits, k = N)))
+    message = str("Message ") + str(i) + str(": I wrote code for spamming Whatsapp. Gudiya Challenged me. Suffer my Wrath now :D")
+
+    #Generate Random String
+    #message = str(''.join(random.choices(string.ascii_uppercase + string.digits, k = 11)))
     print("Message number: " + str(i))
     input_box.send_keys( message + Keys.ENTER)
     time.sleep(1)
