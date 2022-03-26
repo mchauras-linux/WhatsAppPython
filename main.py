@@ -27,10 +27,10 @@ print("Searching InputBox")
 input_box = wait.until(EC.presence_of_element_located((
     By.XPATH, inp_xpath)))
 print("InputBox Found")
-for i in range(1000):
+for i in range(100):
     #Generate Random String
     N = 11
     # Replace the below string with your own message
     message = str(''.join(random.choices(string.ascii_uppercase + string.digits, k = N)))
     input_box.send_keys(str("Suffer My Wrath: ") + message + Keys.ENTER)
-    time.sleep(30)
+    time.sleep(1)
