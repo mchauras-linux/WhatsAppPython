@@ -16,7 +16,7 @@ wait = WebDriverWait(driver, 600)
  
 # Replace 'Friend's Name' with the name of your friend
 # or the name of a group
-target = '"Gudiya Singh"'
+target = '"Manisha"'
  
 x_arg = '//span[contains(@title,' + target + ')]'
 group_title = wait.until(EC.presence_of_element_located((
@@ -30,7 +30,9 @@ print("InputBox Found")
 for i in range(100):
     #Generate Random String
     N = 11
+    message = str("Message ") + str(i) + str(": I wrote code for spamming Whatsapp. Gudiya Challenged me. Suffer my Wrath now :D")
     # Replace the below string with your own message
-    message = str(''.join(random.choices(string.ascii_uppercase + string.digits, k = N)))
-    input_box.send_keys(str("Suffer My Wrath: ") + message + Keys.ENTER)
+    #message = str(''.join(random.choices(string.ascii_uppercase + string.digits, k = N)))
+    print("Message number: " + str(i))
+    input_box.send_keys( message + Keys.ENTER)
     time.sleep(1)
