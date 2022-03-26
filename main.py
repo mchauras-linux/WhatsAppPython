@@ -7,14 +7,14 @@ import time
  
 # Replace below path with the absolute path
 # to chromedriver in your computer
-driver = webdriver.Chrome('.\chromedriverWin.exe')
+driver = webdriver.Chrome('./chromedriverLinux')
  
 driver.get("https://web.whatsapp.com/")
 wait = WebDriverWait(driver, 600)
  
 # Replace 'Friend's Name' with the name of your friend
 # or the name of a group
-target = '"Gudiya\ Singh"'
+target = '"Gudiya Singh"'
  
 # Replace the below string with your own message
 string = "Message sent using Python!!!"
@@ -23,9 +23,11 @@ x_arg = '//span[contains(@title,' + target + ')]'
 group_title = wait.until(EC.presence_of_element_located((
     By.XPATH, x_arg)))
 group_title.click()
-inp_xpath = '//div[@class="_13NKt copyable-text selectable-text"][@data-tab="9"]'
+inp_xpath = '//div[@class="_13NKt copyable-text selectable-text"][@data-tab="10"]'
+print("Searching InputBox")
 input_box = wait.until(EC.presence_of_element_located((
     By.XPATH, inp_xpath)))
+print("InputBox Found")
 for i in range(100):
     input_box.send_keys(string + Keys.ENTER)
     time.sleep(1)
